@@ -463,6 +463,10 @@ function initContactForm() {
 
     /* ----- Webhook Submission ----- */
     async function submitToWebhook(data) {
+        if (!WEBHOOK_URL || WEBHOOK_URL.includes("your-webhook-url.example.com")) {
+            return null; // Not configured
+        }
+
         const response = await fetch(WEBHOOK_URL, {
             method: "POST",
             headers: {
@@ -473,10 +477,35 @@ function initContactForm() {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            throw new Error(`Webhook HTTP ${response.status}: ${response.statusText}`);
+        }
+        return response;
+    }
+
+    /* ----- Supabase Submission ----- */
+    async function submitToSupabase(data) {
+        const url = window.__ENV__?.SUPABASE_URL || "";
+        const key = window.__ENV__?.SUPABASE_ANON_KEY || "";
+        
+        if (!url || !key || url.includes("your-project-id")) {
+            return null; // Not configured
         }
 
-        return response;
+        if (!window.supabase) {
+            console.error("[Tifty AI] Supabase library not loaded.");
+            return null;
+        }
+
+        const supabaseClient = window.supabase.createClient(url, key);
+
+        const { data: result, error } = await supabaseClient
+            .from('audits')
+            .insert([data]);
+
+        if (error) {
+            throw new Error(`Supabase Error: ${error.message}`);
+        }
+        return result;
     }
 
     /* ----- Clear field error on interaction ----- */
@@ -533,14 +562,20 @@ function initContactForm() {
         // 4. Set loading state
         setLoadingState(true);
 
-        // 5. Submit to webhook
+        // 5. Submit to configured endpoints
         try {
-            if (!WEBHOOK_URL || WEBHOOK_URL.includes("your-webhook-url.example.com")) {
-                // Simulate success when no real webhook is configured (development mode)
-                console.warn("[Tifty AI] No webhook URL configured. Simulating success. Data:", formData);
+            const webhookPromise = submitToWebhook(formData);
+            const supabasePromise = submitToSupabase(formData);
+
+            const [webhookResult, supabaseResult] = await Promise.all([webhookPromise, supabasePromise]);
+
+            if (!webhookResult && !supabaseResult) {
+                // Development mode — neither is configured
+                console.warn("[Tifty AI] Neither Webhook nor Supabase are configured. Simulating success. Data:", formData);
                 await new Promise(resolve => setTimeout(resolve, 1500));
             } else {
-                await submitToWebhook(formData);
+                if (supabaseResult !== null) console.log("[Tifty AI] Data saved to Supabase.");
+                if (webhookResult !== null) console.log("[Tifty AI] Data sent to Webhook.");
             }
 
             // 6. Success — show success screen
@@ -548,7 +583,7 @@ function initContactForm() {
             form.reset();
 
         } catch (error) {
-            console.error("[Tifty AI] Webhook submission failed:", error);
+            console.error("[Tifty AI] Submission failed:", error);
             const t = translations[currentLang] || translations["es"];
             showFormError(t.form_error_network || "Error de conexión. Por favor, inténtalo de nuevo.");
         } finally {
