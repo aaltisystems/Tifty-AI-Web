@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Primary Meta Tags -->
+    <title>Tifty AI | Implementación de Inteligencia Artificial para Empresas</title>
+    <meta name="description" content="Agencia profesional de implementación de IA para empresas B2B. Chatbots cognitivos, agentes de voz hiperrealistas y automatización de procesos. Auditoría gratuita. ROI en 45 días.">
+    <meta name="keywords" content="inteligencia artificial empresas, chatbots corporativos, agentes de voz IA, automatización procesos negocio, implementación IA B2B, voice AI, chatbot avanzado, Tifty AI">
+    <meta name="author" content="Tifty AI">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://tiftyai.com/">
+
+    <!-- SEO: Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tifty AI | Infraestructura de Inteligencia Artificial a Medida">
+    <meta property="og:description" content="Diseñamos e implementamos chatbots cognitivos, agentes de voz y automatización avanzada para empresas líderes. Auditoría técnica gratuita.">
+    <meta property="og:url" content="https://tiftyai.com/">
+    <meta property="og:image" content="https://tiftyai.com/logo/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Tifty AI">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="pl_PL">
+
+    <!-- SEO: Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tifty AI | Implementación de IA para Empresas">
+    <meta name="twitter:description" content="Chatbots cognitivos, agentes de voz hiperrealistas y automatización de procesos. Auditoría gratuita para tu negocio.">
+    <meta name="twitter:image" content="https://tiftyai.com/logo/logo.png">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo/favicon.png">
+    <link rel="apple-touch-icon" href="logo/favicon.png">
+
+    <!-- Performance: Preconnect to CDNs -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO: Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tifty AI",
+        "url": "https://tiftyai.com",
+        "logo": "https://tiftyai.com/logo/logo.png",
+        "description": "Agencia profesional de implementación de Inteligencia Artificial. Chatbots cognitivos, agentes de voz y automatización avanzada para empresas B2B.",
+        "email": "contacto@tiftyai.com",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contacto@tiftyai.com",
+            "contactType": "sales",
+            "availableLanguage": ["Spanish", "English", "Polish"]
+        },
+        "offers": {
+            "@type": "Offer",
+            "name": "Auditoría Técnica Gratuita de IA",
+            "description": "Consultoría de 30 minutos para analizar flujos de trabajo y oportunidades de automatización con IA.",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+    <!-- Background Orbs -->
+    <div class="bg-glow-orb orb-cyan"></div>
+    <div class="bg-glow-orb orb-purple"></div>
+    <div class="bg-glow-orb orb-accent"></div>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="logo" aria-label="Ir al inicio — Tifty AI">
+            <img src="logo/favicon.png" alt="Tifty AI Logo" class="logo-img">
+            Tifty<span class="logo-dot"></span>AI
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#services" data-i18n="nav_solutions" aria-label="Ver soluciones de IA">Soluciones</a></li>
+            <li><a href="#benefits" data-i18n="nav_benefits" aria-label="Ver beneficios de Tifty AI">Beneficios</a></li>
+            <li><a href="#demo" data-i18n="nav_demo" aria-label="Probar demo interactiva de IA">Demo Interactiva</a></li>
+            <li><a href="#contact" data-i18n="nav_contact" aria-label="Ir a la sección de contacto">Contacto</a></li>
+            <li><a href="#contact" class="nav-btn-mobile nav-btn" data-i18n="nav_btn" style="display:none;" aria-label="Agendar auditoría gratuita de IA">Auditoría Gratis</a></li>
+        </ul>
+        
+        <!-- Language Selector -->
+        <div class="lang-selector" id="lang-selector">
+            <button class="lang-btn active" data-lang="es" aria-label="Cambiar idioma a Español">ES</button>
+            <button class="lang-btn" data-lang="en" aria-label="Switch language to English">EN</button>
+            <button class="lang-btn" data-lang="pl" aria-label="Zmień język na Polski">PL</button>
+        </div>
+
+        <a href="#contact" class="nav-btn" data-i18n="nav_btn" aria-label="Agendar auditoría gratuita de IA">Auditoría Gratis</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-video-container">
+            <div class="hero-video-wrapper" id="hero-video-wrapper">
+                <video class="hero-video" autoplay muted loop playsinline id="hero-video" preload="metadata" poster="logo/logo.png">
+                    <source src="videoTifty.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de video.
+                </video>
+            </div>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-logo-container reveal-item">
+                <img src="logo/logo.png" alt="Tifty AI Logo" class="hero-logo-img">
+            </div>
+            <div class="hero-badge reveal-item">
+                <span class="hero-badge-dot"></span>
+                <span data-i18n="hero_badge">Agencia de Implementación de IA</span>
+            </div>
+            <h1 class="hero-title reveal-item text-glow" data-i18n="hero_title">
+                La Era de la <br>
+                <span class="gradient-text">Autonomía Corporativa</span>
+            </h1>
+            <p class="hero-description reveal-item" data-i18n="hero_desc">
+                Diseñamos e implementamos infraestructura de Inteligencia Artificial a medida para empresas líderes. 
+                Desde Agentes de Voz hiperrealistas hasta Chatbots avanzados y automatización cognitiva de procesos. 
+                Redefine la productividad y escala sin fricciones.
+            </p>
+            
+            <div class="hero-cta-wrapper reveal-item">
+                <!-- SVG Pulse Beams -->
+                <div class="hero-pulse-beams" aria-hidden="true">
+                    <svg width="858" height="434" viewBox="0 0 858 434" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Path 1 -->
+                        <path d="M269 220.5H16.5C10.9772 220.5 6.5 224.977 6.5 230.5V398.5" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <path d="M269 220.5H16.5C10.9772 220.5 6.5 224.977 6.5 230.5V398.5" stroke="url(#hero-grad-0)" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="6.5" cy="398.5" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+                        <circle cx="269" cy="220.5" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+
+                        <!-- Path 2 -->
+                        <path d="M568 200H841C846.523 200 851 195.523 851 190V40" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <path d="M568 200H841C846.523 200 851 195.523 851 190V40" stroke="url(#hero-grad-1)" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="851" cy="34" r="5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+                        <circle cx="568" cy="200" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+
+                        <!-- Path 3 -->
+                        <path d="M425.5 274V333C425.5 338.523 421.023 343 415.5 343H152C146.477 343 142 347.477 142 353V426.5" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <path d="M425.5 274V333C425.5 338.523 421.023 343 415.5 343H152C146.477 343 142 347.477 142 353V426.5" stroke="url(#hero-grad-2)" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="142" cy="427" r="5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+                        <circle cx="425.5" cy="274" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+
+                        <!-- Path 4 -->
+                        <path d="M493 274V333.226C493 338.749 497.477 343.226 503 343.226H760C765.523 343.226 770 347.703 770 353.226V427" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <path d="M493 274V333.226C493 338.749 497.477 343.226 503 343.226H760C765.523 343.226 770 347.703 770 353.226V427" stroke="url(#hero-grad-3)" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="770" cy="427" r="5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+                        <circle cx="493" cy="274" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+
+                        <!-- Path 5 -->
+                        <path d="M380 168V17C380 11.4772 384.477 7 390 7H414" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <path d="M380 168V17C380 11.4772 384.477 7 390 7H414" stroke="url(#hero-grad-4)" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="420.5" cy="6.5" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+                        <circle cx="380" cy="168" r="4.5" fill="#030303" stroke="rgba(255,255,255,0.15)" />
+
+                        <defs>
+                            <linearGradient id="hero-grad-0" gradientUnits="userSpaceOnUse" x1="0%" y1="80%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#c5a059" stop-opacity="0" />
+                                <stop offset="20%" stop-color="#c5a059" stop-opacity="1" />
+                                <stop offset="50%" stop-color="#fcf6ba" stop-opacity="1" />
+                                <stop offset="100%" stop-color="#aa771c" stop-opacity="0" />
+                            </linearGradient>
+                            <linearGradient id="hero-grad-1" gradientUnits="userSpaceOnUse" x1="0%" y1="80%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#c5a059" stop-opacity="0" />
+                                <stop offset="20%" stop-color="#c5a059" stop-opacity="1" />
+                                <stop offset="50%" stop-color="#fcf6ba" stop-opacity="1" />
+                                <stop offset="100%" stop-color="#aa771c" stop-opacity="0" />
+                            </linearGradient>
+                            <linearGradient id="hero-grad-2" gradientUnits="userSpaceOnUse" x1="0%" y1="80%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#c5a059" stop-opacity="0" />
+                                <stop offset="20%" stop-color="#c5a059" stop-opacity="1" />
+                                <stop offset="50%" stop-color="#fcf6ba" stop-opacity="1" />
+                                <stop offset="100%" stop-color="#aa771c" stop-opacity="0" />
+                            </linearGradient>
+                            <linearGradient id="hero-grad-3" gradientUnits="userSpaceOnUse" x1="40%" y1="160%" x2="50%" y2="180%">
+                                <stop offset="0%" stop-color="#c5a059" stop-opacity="0" />
+                                <stop offset="20%" stop-color="#c5a059" stop-opacity="1" />
+                                <stop offset="50%" stop-color="#fcf6ba" stop-opacity="1" />
+                                <stop offset="100%" stop-color="#aa771c" stop-opacity="0" />
+                            </linearGradient>
+                            <linearGradient id="hero-grad-4" gradientUnits="userSpaceOnUse" x1="-40%" y1="0%" x2="-10%" y2="20%">
+                                <stop offset="0%" stop-color="#c5a059" stop-opacity="0" />
+                                <stop offset="20%" stop-color="#c5a059" stop-opacity="1" />
+                                <stop offset="50%" stop-color="#fcf6ba" stop-opacity="1" />
+                                <stop offset="100%" stop-color="#aa771c" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#contact" class="btn-primary" data-i18n="hero_btn_primary" aria-label="Agendar auditoría gratuita de IA">Agendar Auditoría Gratis</a>
+                    <a href="#services" class="btn-secondary" data-i18n="hero_btn_secondary" aria-label="Ver soluciones de inteligencia artificial disponibles">Explorar Soluciones</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+    <!-- Metrics Section -->
+    <section class="metrics" id="metrics">
+        <div class="metrics-grid">
+            <div class="metric-card reveal-item">
+                <div class="metric-number" data-target="350">+350%</div>
+                <div class="metric-label" data-i18n="metric_1_label">Eficiencia operativa en flujos repetitivos</div>
+            </div>
+            <div class="metric-card reveal-item">
+                <div class="metric-number" data-target="70">-70%</div>
+                <div class="metric-label" data-i18n="metric_2_label">Tiempo de primera respuesta al cliente</div>
+            </div>
+            <div class="metric-card reveal-item">
+                <div class="metric-number" data-target="24">24/7</div>
+                <div class="metric-label" data-i18n="metric_3_label">Soporte y cierre de ventas autónomo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-label reveal-item" data-i18n="services_label">Nuestras Soluciones</span>
+            <h2 class="section-title reveal-item" data-i18n="services_title">Infraestructura Cognitiva</h2>
+            <p class="section-subtitle reveal-item" data-i18n="services_subtitle">Implementamos sistemas avanzados de IA listos para integrarse en tu stack tecnológico actual y transformar tus flujos de trabajo.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Chatbots Card -->
+            <div class="service-card reveal-item">
+                <div class="service-icon-wrapper">
+                    <svg viewBox="0 0 32 32">
+                        <defs>
+                            <linearGradient id="cyan-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#c5a059" />
+                                <stop offset="100%" stop-color="#aa771c" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="3" y="10" width="26" height="18" rx="5" />
+                        <circle cx="10" cy="19" r="2" fill="currentColor" />
+                        <circle cx="22" cy="19" r="2" fill="currentColor" />
+                        <path d="M12 23 C 14 25, 18 25, 20 23" />
+                        <line x1="16" y1="10" x2="16" y2="4" />
+                        <circle cx="16" cy="4" r="2" fill="currentColor" />
+                    </svg>
+                </div>
+                <h3 class="service-title" data-i18n="service_1_title">Chatbots Inteligentes</h3>
+                <p class="service-desc" data-i18n="service_1_desc">
+                    Agentes de chat cognitivos con memoria a largo plazo y comprensión contextual profunda. Automatizan soporte, cualifican prospectos y guían al cliente a la conversión.
+                </p>
+                <ul class="service-features">
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_1_feat_1">Integración con CRMs y Bases de Datos</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_1_feat_2">Comprensión multimodal de intenciones</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_1_feat_3">Atención en múltiples idiomas 24/7</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Voice AI Card -->
+            <div class="service-card reveal-item">
+                <div class="service-icon-wrapper">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M16 3 C12.7 3 10 5.7 10 9 L10 17 C10 20.3 12.7 23 16 23 C19.3 23 22 20.3 22 17 L22 9 C22 5.7 19.3 3 16 3 Z" />
+                        <path d="M6 15 L6 17 C6 22.5 10.5 27 16 27 C21.5 27 26 22.5 26 17 L26 15" />
+                        <line x1="16" y1="27" x2="16" y2="30" />
+                        <line x1="10" y1="30" x2="22" y2="30" />
+                    </svg>
+                </div>
+                <h3 class="service-title" data-i18n="service_2_title">Agentes de Voz (Voice AI)</h3>
+                <p class="service-desc" data-i18n="service_2_desc">
+                    Agentes telefónicos autónomos con latencia ultra baja, entonación natural y empatía conversacional. Capaces de realizar llamadas entrantes o salientes de forma natural.
+                </p>
+                <ul class="service-features">
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_2_feat_1">Agendamiento y toma de citas en tiempo real</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_2_feat_2">Voces humanas personalizables sin acento robot</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_2_feat_3">Transferencia inteligente a agentes humanos</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Automation Card -->
+            <div class="service-card reveal-item">
+                <div class="service-icon-wrapper">
+                    <svg viewBox="0 0 32 32">
+                        <circle cx="16" cy="16" r="4" />
+                        <path d="M16 2 L19 6 L23 5 L23 9 L27 11 L25 15 L28 18 L24 21 L23 25 L19 25 L16 29 L13 25 L9 25 L8 21 L4 18 L7 15 L5 11 L9 9 L9 5 L13 6 Z" />
+                    </svg>
+                </div>
+                <h3 class="service-title" data-i18n="service_3_title">Automatización de Procesos</h3>
+                <p class="service-desc" data-i18n="service_3_desc">
+                    Unión de herramientas y lógica mediante IA autónoma. Automatizamos flujos complejos de tareas, desde el análisis de documentos y facturas hasta respuestas a correos y reportes.
+                </p>
+                <ul class="service-features">
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_3_feat_1">Lectura inteligente de facturas y PDFs</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_3_feat_2">Sincronización automatizada entre sistemas</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span data-i18n="service_3_feat_3">Monitoreo y toma de decisiones cognitivas</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="benefits-grid">
+            <div class="benefits-left reveal-item">
+                <div class="benefits-card-float" id="float-card">
+                    <h3 style="margin-bottom: 20px;" class="gradient-text" data-i18n="benefits_left_title">El Retorno de la IA</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;" data-i18n="benefits_left_desc">
+                        Las empresas que implementan agentes de inteligencia artificial autónomos reportan un crecimiento acelerado sin la necesidad de escalar proporcionalmente sus equipos de soporte u operaciones.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                            <span data-i18n="benefits_left_cost">Costo de Operación</span>
+                            <span style="color: var(--cyan); font-weight: 700;">-60%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                            <span data-i18n="benefits_left_volume">Volumen de Atención</span>
+                            <span style="color: var(--cyan); font-weight: 700;">x10</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding-bottom: 5px;">
+                            <span data-i18n="benefits_left_time">Tiempo de Integración</span>
+                            <span style="color: var(--cyan); font-weight: 700;" data-i18n="benefits_left_weeks">3-4 Semanas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits-right">
+                <div class="section-header" style="text-align: left; margin-bottom: 40px; padding: 0;">
+                    <span class="section-label" data-i18n="benefits_label">¿Por qué Tifty AI?</span>
+                    <h2 class="section-title" data-i18n="benefits_title">Resultados Tangibles, No Promesas</h2>
+                </div>
+
+                <div class="benefit-item reveal-item">
+                    <div class="benefit-num">01</div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="benefit_1_title">Ahorro de Costes Crítico</h3>
+                        <p data-i18n="benefit_1_desc">Reducimos los gastos asociados con tareas operativas repetitivas y de bajo valor, permitiendo a tus empleados enfocarse en la estrategia y la innovación de la empresa.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item reveal-item">
+                    <div class="benefit-num">02</div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="benefit_2_title">Escalabilidad Exponencial</h3>
+                        <p data-i18n="benefit_2_desc">Atiende simultáneamente miles de chats o llamadas de voz sin tiempos de espera, sin fallos y manteniendo siempre el máximo estándar de calidad y consistencia de marca.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item reveal-item">
+                    <div class="benefit-num">03</div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="benefit_3_title">Integración Sin Fricciones</h3>
+                        <p data-i18n="benefit_3_desc">Diseñamos sistemas que se acoplan perfectamente con las herramientas que ya utilizas, como Salesforce, HubSpot, Slack o ERPs propios, garantizando una transición invisible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Playground -->
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
+            <div class="demo-info">
+                <span class="section-label reveal-item" data-i18n="demo_label">Demo interactiva</span>
+                <h2 class="demo-title reveal-item" data-i18n="demo_title">Prueba la velocidad de nuestra IA</h2>
+                <p class="demo-desc reveal-item" data-i18n="demo_desc">
+                    Hemos configurado un asistente de IA para que respondas tus dudas iniciales al instante. 
+                    Hazle preguntas sobre tiempos de desarrollo, seguridad de datos o integraciones.
+                </p>
+                <div class="demo-actions reveal-item">
+                    <a href="#contact" class="btn-primary" data-i18n="demo_btn" aria-label="Solicitar demostración personalizada de IA">Solicitar Demo Personalizada</a>
+                </div>
+            </div>
+
+            <div class="chat-wrapper reveal-item">
+                <div class="chat-simulator">
+                    <div class="chat-header">
+                        <div class="bot-avatar">
+                            <img src="logo/favicon.png" alt="Tifty AI Avatar" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="bot-status-name" data-i18n="chat_bot_name">Tifty AI Core</div>
+                            <div class="bot-status-desc" data-i18n="chat_bot_status">En línea y pensando</div>
+                        </div>
+                    </div>
+                    <div class="chat-body" id="chat-body">
+                        <div class="chat-message message-bot" data-i18n="chat_welcome">
+                            ¡Hola! Soy el asistente inteligente de Tifty AI. ¿En qué puedo ayudarte hoy sobre la automatización e implementación de IA para tu negocio?
+                        </div>
+                    </div>
+                    <div class="chat-footer">
+                        <form id="chat-form" onsubmit="event.preventDefault();">
+                            <div class="chat-input-wrapper">
+                                <input type="text" id="chat-input" class="chat-input" data-i18n-placeholder="chat_input_placeholder" placeholder="Pregunta sobre integraciones, precios o tiempos..." autocomplete="off" aria-label="Escribir mensaje al chatbot de Tifty AI">
+                                <button type="submit" id="chat-send-btn" class="chat-send-btn" aria-label="Enviar mensaje">
+                                    <svg viewBox="0 0 24 24"><polyline points="22 2 11 13 2 9 22 2 15 22 11 13"></polyline></svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lead Form -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span class="section-label reveal-item" data-i18n="contact_label">Da el primer paso</span>
+                <h2 class="section-title reveal-item" data-i18n="contact_title">¿Listo para automatizar tu negocio?</h2>
+                <p class="section-subtitle reveal-item" style="text-align: left; margin-bottom: 40px;" data-i18n="contact_subtitle">
+                    Agenda una auditoría técnica gratuita de 30 minutos. Analizaremos tus flujos actuales e identificaremos dónde la IA puede ahorrarte más tiempo y dinero.
+                </p>
+                <div class="contact-card reveal-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;" data-i18n="contact_email_title">Correo Directo</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">contacto@tiftyai.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-wrapper reveal-item">
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-group" id="form-group-name">
+                        <label for="name" data-i18n="form_name_label">Nombre Completo</label>
+                        <input type="text" id="name" required data-i18n-placeholder="form_name_placeholder" placeholder="Escribe tu nombre" autocomplete="name">
+                        <span class="form-field-error" id="error-name"></span>
+                    </div>
+                    <div class="form-group" id="form-group-company">
+                        <label for="company" data-i18n="form_company_label">Empresa / Negocio</label>
+                        <input type="text" id="company" required data-i18n-placeholder="form_company_placeholder" placeholder="Nombre de tu empresa" autocomplete="organization">
+                        <span class="form-field-error" id="error-company"></span>
+                    </div>
+                    <div class="form-group" id="form-group-email">
+                        <label for="email" data-i18n="form_email_label">Correo Electrónico Corporativo</label>
+                        <input type="email" id="email" required data-i18n-placeholder="form_email_placeholder" placeholder="tu@empresa.com" autocomplete="email">
+                        <span class="form-field-error" id="error-email"></span>
+                    </div>
+                    <div class="form-group" id="form-group-challenge">
+                        <label for="challenge" data-i18n="form_challenge_label">Principal Desafío Actual</label>
+                        <select id="challenge" required>
+                            <option value="" disabled selected data-i18n="form_challenge_placeholder">Selecciona tu desafío</option>
+                            <option value="customer_support" data-i18n="form_challenge_1">Automatizar atención al cliente (chat/voz)</option>
+                            <option value="reduce_costs" data-i18n="form_challenge_2">Reducir costos operativos repetitivos</option>
+                            <option value="scale_sales" data-i18n="form_challenge_3">Escalar ventas sin escalar equipo</option>
+                            <option value="document_processing" data-i18n="form_challenge_4">Automatizar procesamiento de documentos</option>
+                            <option value="ai_integration" data-i18n="form_challenge_5">Integrar IA en sistemas existentes (CRM/ERP)</option>
+                            <option value="other" data-i18n="form_challenge_6">Otro desafío específico</option>
+                        </select>
+                        <span class="form-field-error" id="error-challenge"></span>
+                    </div>
+
+                    <!-- Error banner -->
+                    <div class="form-error" id="form-error">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span id="form-error-text"></span>
+                    </div>
+
+                    <button type="submit" class="form-btn" id="form-submit-btn" aria-label="Solicitar auditoría gratuita de IA">
+                        <span class="form-btn-content">
+                            <svg class="form-spinner" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="31.4 31.4" />
+                            </svg>
+                            <span class="form-btn-text" data-i18n="form_submit_audit">Solicitar Auditoría Gratis</span>
+                        </span>
+                    </button>
+
+                    <!-- Success screen -->
+                    <div class="form-success" id="form-success">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <h3 class="gradient-text" style="margin-bottom: 12px; font-size: 1.6rem;" data-i18n="form_success_audit_title">¡Auditoría Solicitada con Éxito!</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; max-width: 320px;" data-i18n="form_success_audit_desc">
+                            Nuestro equipo analizará tu caso y un consultor senior se pondrá en contacto contigo en las próximas 12 horas para agendar tu auditoría personalizada.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#hero" class="logo" aria-label="Ir al inicio — Tifty AI">
+                    <img src="logo/favicon.png" alt="Tifty AI Logo" class="logo-img" loading="lazy">
+                    Tifty<span class="logo-dot"></span>AI
+                </a>
+                <p data-i18n="footer_brand_desc">Implementación profesional de inteligencia artificial a escala para empresas que lideran el mercado.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_nav">Navegación</h4>
+                <ul>
+                    <li><a href="#services" data-i18n="nav_solutions">Soluciones</a></li>
+                    <li><a href="#benefits" data-i18n="nav_benefits">Beneficios</a></li>
+                    <li><a href="#demo" data-i18n="nav_demo">Demo</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_legal">Legal</h4>
+                <ul>
+                    <li><a href="#" data-i18n="footer_terms">Términos de Servicio</a></li>
+                    <li><a href="#" data-i18n="footer_privacy">Política de Privacidad</a></li>
+                    <li><a href="#" data-i18n="footer_security">Seguridad de Datos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div id="footer-rights" data-i18n="footer_rights">&copy; 2026 Tifty AI. Todos los derechos reservados.</div>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA Button -->
+    <a href="#contact" class="floating-cta" id="floating-cta" aria-label="Solicitar auditoría gratuita de IA">
+        <span class="floating-cta-dot" aria-hidden="true"></span>
+        <span data-i18n="nav_btn">Auditoría Gratis</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+
+    <!-- Environment Configuration -->
+    <script src="env.js"></script>
+
+    <!-- Translations mapping dictionary -->
+    <script src="translations.js"></script>
+
+    <!-- GSAP & ScrollTrigger from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

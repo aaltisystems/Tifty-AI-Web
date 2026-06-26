@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mac OS
+.DS_Store
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (if ever used)
+node_modules/
+
+# Ignore the heavy video if it's too large, but since it's 21MB we can keep it in Git.
+# If you want to ignore it, uncomment the line below:
+# videoTifty.mp4
